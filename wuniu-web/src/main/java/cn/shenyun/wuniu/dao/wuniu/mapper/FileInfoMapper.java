@@ -1,0 +1,30 @@
+package cn.shenyun.wuniu.dao.wuniu.mapper;
+
+import cn.shenyun.wuniu.entity.wuniu.FileInfo;
+import cn.shenyun.wuniu.entity.wuniu.FileInfoExample;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
+
+public interface FileInfoMapper {
+    int countByExample(FileInfoExample example);
+
+    int deleteByExample(FileInfoExample example);
+
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(FileInfo record);
+
+    int insertSelective(FileInfo record);
+
+    List<FileInfo> selectByExample(FileInfoExample example);
+
+    FileInfo selectByPrimaryKey(Integer id);
+
+    int updateByExampleSelective(@Param("record") FileInfo record, @Param("example") FileInfoExample example);
+
+    int updateByExample(@Param("record") FileInfo record, @Param("example") FileInfoExample example);
+
+    int updateByPrimaryKeySelective(FileInfo record);
+
+    int updateByPrimaryKey(FileInfo record);
+}
