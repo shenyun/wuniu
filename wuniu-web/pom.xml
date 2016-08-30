@@ -141,6 +141,11 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
+        <!--commons-lang-2-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
         <!--velocity-->
         <dependency>
             <groupId>org.apache.velocity</groupId>
