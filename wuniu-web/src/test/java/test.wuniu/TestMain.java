@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.UUID;
 
 /**
  * Created by yong.luo on 2016/6/21.
@@ -25,6 +26,15 @@ public class TestMain {
             BigDecimal big=new BigDecimal(dd.toString());
             System.out.println(big);
         }
+
+    }
+    @Test
+    public void  test2(){
+        for (int i = 0; i <20 ; i++) {
+            String uuid=UUID.randomUUID().toString();
+            System.out.println(uuid);
+        }
+
 
     }
 }

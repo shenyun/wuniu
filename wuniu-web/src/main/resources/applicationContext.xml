@@ -38,7 +38,7 @@
 	<import resource="spring-servlet.xml"/>
     <!--dubbo-->
     <!--<import resource="dubbo-conf.xml"/>-->
-    <import resource="dataSource-wuniu-master.xml"/>
+    <!--<import resource="dataSource-wuniu-master.xml"/>-->
     <!--<import resource="dataSource-oaauth-slave.xml"/>-->
     <!--<import resource="jdbc.xml"/>-->
     <!--<import resource="spring-mybatis.xml"/>-->

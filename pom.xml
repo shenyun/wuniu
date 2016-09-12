@@ -142,7 +142,7 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
-                <version>1.0.13</version>
+                <version>1.0.18</version>
             </dependency>
             <!-- 日志打印 -->
             <dependency>
