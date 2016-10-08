@@ -40,6 +40,11 @@ public class FileInfo implements Serializable {
     private Integer size;
 
     /**
+     * 是否删除：1，删除
+     */
+    private Byte delFlag;
+
+    /**
      * 缩放策略
      */
     private String scaleStrategy;
@@ -107,6 +112,14 @@ public class FileInfo implements Serializable {
         this.size = size;
     }
 
+    public Byte getDelFlag() {
+        return delFlag;
+    }
+
+    public void setDelFlag(Byte delFlag) {
+        this.delFlag = delFlag;
+    }
+
     public String getScaleStrategy() {
         return scaleStrategy;
     }
@@ -136,6 +149,7 @@ public class FileInfo implements Serializable {
         sb.append(", fastdfsName=").append(fastdfsName);
         sb.append(", type=").append(type);
         sb.append(", size=").append(size);
+        sb.append(", delFlag=").append(delFlag);
         sb.append(", scaleStrategy=").append(scaleStrategy);
         sb.append(", createTime=").append(createTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);

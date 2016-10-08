@@ -27,6 +27,7 @@
         <jackson.version>1.8.4</jackson.version>
         <servlet.version>2.5</servlet.version>
         <jsp.version>2.0</jsp.version>
+        <fastjson.version>1.2.9</fastjson.version>
     </properties>
 	<modules>
         <module>wuniu-web</module>
@@ -267,6 +268,12 @@
                         <artifactId>log4j</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

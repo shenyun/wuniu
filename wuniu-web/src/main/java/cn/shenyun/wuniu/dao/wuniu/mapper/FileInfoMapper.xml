@@ -9,6 +9,7 @@
     <result column="fastdfs_name" property="fastdfsName" jdbcType="VARCHAR" />
     <result column="type" property="type" jdbcType="VARCHAR" />
     <result column="size" property="size" jdbcType="INTEGER" />
+    <result column="del_flag" property="delFlag" jdbcType="TINYINT" />
     <result column="scale_strategy" property="scaleStrategy" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -71,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, biz_code, url_hash, fastdfs_group, fastdfs_name, `type`, `size`, scale_strategy, 
+    id, biz_code, url_hash, fastdfs_group, fastdfs_name, `type`, `size`, del_flag, scale_strategy, 
     create_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.shenyun.wuniu.entity.wuniu.FileInfoExample" >
@@ -111,10 +112,12 @@
     </selectKey>
     insert into file_info (biz_code, url_hash, fastdfs_group, 
       fastdfs_name, `type`, `size`, 
-      scale_strategy, create_time)
+      del_flag, scale_strategy, create_time
+      )
     values (#{bizCode,jdbcType=VARCHAR}, #{urlHash,jdbcType=INTEGER}, #{fastdfsGroup,jdbcType=VARCHAR}, 
       #{fastdfsName,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{size,jdbcType=INTEGER}, 
-      #{scaleStrategy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+      #{delFlag,jdbcType=TINYINT}, #{scaleStrategy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.shenyun.wuniu.entity.wuniu.FileInfo" >
     <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
@@ -139,6 +142,9 @@
       </if>
       <if test="size != null" >
         `size`,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
       </if>
       <if test="scaleStrategy != null" >
         scale_strategy,
@@ -165,6 +171,9 @@
       </if>
       <if test="size != null" >
         #{size,jdbcType=INTEGER},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=TINYINT},
       </if>
       <if test="scaleStrategy != null" >
         #{scaleStrategy,jdbcType=VARCHAR},
@@ -204,6 +213,9 @@
       <if test="record.size != null" >
         `size` = #{record.size,jdbcType=INTEGER},
       </if>
+      <if test="record.delFlag != null" >
+        del_flag = #{record.delFlag,jdbcType=TINYINT},
+      </if>
       <if test="record.scaleStrategy != null" >
         scale_strategy = #{record.scaleStrategy,jdbcType=VARCHAR},
       </if>
@@ -224,6 +236,7 @@
       fastdfs_name = #{record.fastdfsName,jdbcType=VARCHAR},
       `type` = #{record.type,jdbcType=VARCHAR},
       `size` = #{record.size,jdbcType=INTEGER},
+      del_flag = #{record.delFlag,jdbcType=TINYINT},
       scale_strategy = #{record.scaleStrategy,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
@@ -251,6 +264,9 @@
       <if test="size != null" >
         `size` = #{size,jdbcType=INTEGER},
       </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=TINYINT},
+      </if>
       <if test="scaleStrategy != null" >
         scale_strategy = #{scaleStrategy,jdbcType=VARCHAR},
       </if>
@@ -268,6 +284,7 @@
       fastdfs_name = #{fastdfsName,jdbcType=VARCHAR},
       `type` = #{type,jdbcType=VARCHAR},
       `size` = #{size,jdbcType=INTEGER},
+      del_flag = #{delFlag,jdbcType=TINYINT},
       scale_strategy = #{scaleStrategy,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}

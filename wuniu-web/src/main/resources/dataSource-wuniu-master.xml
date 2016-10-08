@@ -44,6 +44,7 @@
 		<property name="mapperLocations">
 			<list>
 				<value>classpath*:cn/shenyun/**/dao/*/mapper/*.xml</value>
+				<value>classpath*:cn/shenyun/**/dao/*/mapext/*.xml</value>
 			</list>
 		</property>
 		<property name="plugins">
@@ -77,7 +78,7 @@
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!--指定接口所在的包-->
-		<property name="basePackage" value="cn.shenyun.**.dao.wuniu.mapper" />
+		<property name="basePackage" value="cn.shenyun.**.dao.wuniu.mapper,cn.shenyun.**.dao.wuniu.mapext" />
 		<property name="sqlSessionFactoryBeanName" value="wuniuMasterSqlSessionFactory" />
 		<!--<property name="nameGenerator" >-->
 			<!--<bean class="com.zhubajie.category.center.dao.MapperBeanNameGenerator">-->

@@ -32,14 +32,16 @@
     <!--处理配置文件-->
     <!--<context:component-scan base-package="com.github.shenyun.webdemo.conf"/>-->
 
-    <!--<context:component-scan base-package="cn.shenyun..service"/>-->
+    <context:component-scan base-package="cn.shenyun.wuniu.service"/>
+    <context:component-scan base-package="cn.shenyun.wuniu.biz"/>
     <!--<context:component-scan base-package="com.zhubajie.category.center.service.impl"/>-->
 
 	<!--springmvc controller-->
 	<import resource="spring-servlet.xml"/>
+
     <!--dubbo-->
     <!--<import resource="dubbo-conf.xml"/>-->
-    <!--<import resource="dataSource-wuniu-master.xml"/>-->
+    <import resource="dataSource-wuniu-master.xml"/>
     <!--<import resource="dataSource-oaauth-slave.xml"/>-->
     <!--<import resource="jdbc.xml"/>-->
     <!--<import resource="spring-mybatis.xml"/>-->

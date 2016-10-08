@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.shenyun.wuniu.dao.wuniu.mapext.FileInfoMapext">
+    <select id="getFileInfoByUrlHash" resultMap="cn.shenyun.wuniu.dao.wuniu.mapper.FileInfoMapper.BaseResultMap"  >
+        select
+        <include refid="cn.shenyun.wuniu.dao.wuniu.mapper.FileInfoMapper.Base_Column_List" />
+        from file_info
+        WHERE url_hash=#{urlHash} AND fastdfs_group=#{fastdfsGroup} AND fastdfs_name=#{fastdfsName}
+    </select>
+</mapper>

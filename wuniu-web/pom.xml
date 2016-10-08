@@ -173,6 +173,11 @@
             <artifactId>watcher-http</artifactId>
             <version>1.5.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <finalName>wuniu-web</finalName>

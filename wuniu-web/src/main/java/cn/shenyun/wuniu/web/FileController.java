@@ -23,7 +23,7 @@ public class FileController {
         return "ok";
     }
     @RequestMapping("download")
-    public void download(){
+    public void download(String path){
 
     }
     @RequestMapping("session")
