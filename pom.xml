@@ -28,6 +28,7 @@
         <servlet.version>2.5</servlet.version>
         <jsp.version>2.0</jsp.version>
         <fastjson.version>1.2.9</fastjson.version>
+        <fastdfs-client-java>1.25</fastdfs-client-java>
     </properties>
 	<modules>
         <module>wuniu-web</module>
@@ -274,6 +275,13 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+            <!--fastdfs-->
+            <dependency>
+                <groupId>org.csource</groupId>
+                <artifactId>fastdfs-client-java</artifactId>
+                <version>${fastdfs-client-java}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

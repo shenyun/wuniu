@@ -13,6 +13,13 @@ import java.util.UUID;
  */
 
 public class TestMain {
+    public static void main(String[] args) {
+
+        String bizCode="114001";
+        String fileId="390208";
+        String absoluteUrl="http://filesystem.msxf.lotest/file/download?bizCode="+bizCode+"&fileId="+fileId;
+
+    }
     @Test
     public void  test() {
         System.out.println("test");
@@ -36,5 +43,15 @@ public class TestMain {
         }
 
 
+    }
+    @Test
+    public void test3(){
+
+        long workerIdBits = 5L;
+        long dd1=(-1L << workerIdBits);
+        long maxWorkerId = -1L ^(-1L << workerIdBits);
+        System.out.println(dd1);
+        System.out.println(maxWorkerId);
+        System.out.println(1<<5);
     }
 }
