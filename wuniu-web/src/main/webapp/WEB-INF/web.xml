@@ -16,16 +16,17 @@
     <listener>
         <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
     </listener>
-    <filter>
-        <filter-name>springSessionRepositoryFilter</filter-name>
-        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>springSessionRepositoryFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-        <dispatcher>REQUEST</dispatcher>
-        <dispatcher>ERROR</dispatcher>
-    </filter-mapping>
+    <!-- spring-session共享 -->
+    <!--<filter>-->
+        <!--<filter-name>springSessionRepositoryFilter</filter-name>-->
+        <!--<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>springSessionRepositoryFilter</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+        <!--<dispatcher>REQUEST</dispatcher>-->
+        <!--<dispatcher>ERROR</dispatcher>-->
+    <!--</filter-mapping>-->
     <!-- 防止post提交过程的中文乱码 springmvc中的过滤器处理 -->
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>

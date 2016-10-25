@@ -28,7 +28,7 @@
             </list>
         </property>
     </bean>
-
+    <context:component-scan base-package="cn.shenyun.wuniu.conf"/>
     <context:component-scan base-package="cn.shenyun.wuniu.service"/>
     <context:component-scan base-package="cn.shenyun.wuniu.biz"/>
     <!--<import resource="spring-servlet.xml"/>-->

@@ -21,15 +21,17 @@ import java.util.List;
  * Created by yong.luo on 2016/5/24.
  */
 @Service
-public class FastdfsService {
-    private Logger logger= LoggerFactory.getLogger(this.getClass());
+public class FastdfsService{
+    // implements InitializingBean 可以处理bean初始化后再执行代码
 
+    private Logger logger= LoggerFactory.getLogger(this.getClass());
     private FastdfsCfgManager fastdfsCfgManager;
     @Autowired
     public FastdfsService(FastdfsCfgManager fastdfsCfgManager){
         this.fastdfsCfgManager=fastdfsCfgManager;
         init();
     }
+
     public void init(){
 //        connect_timeout = 2
 //        network_timeout = 3
@@ -133,4 +135,6 @@ public class FastdfsService {
         }
         return false;
     }
+
+
 }
