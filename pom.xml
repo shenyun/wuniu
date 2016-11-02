@@ -29,6 +29,7 @@
         <jsp.version>2.0</jsp.version>
         <fastjson.version>1.2.9</fastjson.version>
         <fastdfs-client-java>1.25</fastdfs-client-java>
+        <logback.version>1.1.7</logback.version>
     </properties>
 	<modules>
         <module>wuniu-web</module>
@@ -184,7 +185,7 @@
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
-                <version>1.1.2</version>
+                <version>${logback.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>

@@ -54,4 +54,31 @@ public class TestMain {
         System.out.println(maxWorkerId);
         System.out.println(1<<5);
     }
+    @Test
+    public void test4(){
+        boolean[] a=new boolean[150];
+        for (int i = 0; i <150 ; i++) {
+            a[i]=false;
+        }
+
+        for (int i = 0; i <150 ; i++) {
+            if((i+1)%3==0){
+                a[i]=!a[i];
+            }
+        }
+
+        for (int i = 0; i <150 ; i++) {
+            if((i+1)%5==0){
+                a[i]=!a[i];
+            }
+        }
+        int lia=0;
+        for (int i = 0; i <150 ; i++) {
+            if(a[i]==true){
+                lia=lia+1;
+            }
+        }
+        System.out.println(lia);
+
+    }
 }

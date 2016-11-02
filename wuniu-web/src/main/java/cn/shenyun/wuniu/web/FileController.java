@@ -1,6 +1,9 @@
 package cn.shenyun.wuniu.web;
 
 import cn.shenyun.utils.HostUtils;
+import com.alibaba.fastjson.JSON;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,6 +20,7 @@ import java.util.Map;
  */
 @Controller
 public class FileController {
+    private static Logger logger= LoggerFactory.getLogger(FileController.class);
     @RequestMapping("upload")
     @ResponseBody
     public String upload(){
@@ -38,6 +42,7 @@ public class FileController {
         res.put("msg","userId set ok");
         res.put("ip", HostUtils.getHostAddress());
         res.put("port", HostUtils.getPort());
+        logger.info("----------------"+JSON.toJSONString(res));
         return res;
     }
     @RequestMapping("getsession")
@@ -54,6 +59,7 @@ public class FileController {
         res.put("port", HostUtils.getPort());
         res.put("cookieList", getCookies(request));
         res.put("cookies", request.getCookies());
+        logger.info("----------------"+JSON.toJSONString(res));
         return res;
     }
     @RequestMapping("cookie")
