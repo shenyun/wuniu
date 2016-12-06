@@ -29,7 +29,7 @@
         </property>
     </bean>
     <!--spring-session共享-->
-    <!--<import resource="session.xml"/>-->
+    <import resource="session.xml"/>
 
     <!--处理配置文件-->
     <context:component-scan base-package="cn.shenyun.wuniu.conf"/>

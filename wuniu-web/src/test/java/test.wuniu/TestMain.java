@@ -21,6 +21,13 @@ public class TestMain {
 
     }
     @Test
+    public void dd(){
+        String aa="123";
+
+        aa.equals(null);
+        System.out.println("oo");
+    }
+    @Test
     public void  test() {
         System.out.println("test");
         String a="1233";

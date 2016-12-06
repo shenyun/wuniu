@@ -4,7 +4,7 @@
     <select id="getFileInfoByUrlHash" resultMap="cn.shenyun.wuniu.dao.wuniu.mapper.FileInfoMapper.BaseResultMap"  >
         select
         <include refid="cn.shenyun.wuniu.dao.wuniu.mapper.FileInfoMapper.Base_Column_List" />
-        from file_info
+        from file_info${suffix}
         WHERE url_hash=#{urlHash} AND fastdfs_group=#{fastdfsGroup} AND fastdfs_name=#{fastdfsName}
     </select>
 </mapper>

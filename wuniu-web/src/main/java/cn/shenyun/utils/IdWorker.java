@@ -18,6 +18,14 @@ import java.util.Random;
  * http://www.cnblogs.com/relucent/p/4955340.html
  */
 public class IdWorker {
+    /*
+    * snowflake (Java版)
+    * 第一位为未使用，接下来的41位为毫秒级时间(41位的长度可以使用69年)，
+    * 然后是2位datacenterId和8位workerId(ip最后一节)(10位的长度最多支持部署1024个节点） ，
+    * 最后12位是毫秒内的计数（12位的计数顺序号支持每个节点每毫秒产生4096个ID序号）
+    */
+
+
     //系统开始运行时间,2016/08/08 12:00:00
     private final long twepoch = 1470628800000L;
     //datacenterIdBits workerIdBits一共10位，可以支持1024台机器
@@ -55,6 +63,7 @@ public class IdWorker {
             if(ipByte!=null) {
                 workerId=(int)ipByte[3];
             }else {
+                System.out.println("------------无法获取ip地址-----------");
                 workerId = new Random(System.currentTimeMillis()).nextInt() % 255;
             }
             idWorker=new IdWorker(workerId,0);
