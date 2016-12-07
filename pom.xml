@@ -33,6 +33,7 @@
     </properties>
 	<modules>
         <module>wuniu-web</module>
+        <module>redis-serializer</module>
     </modules>
     <dependencyManagement>
         <dependencies>

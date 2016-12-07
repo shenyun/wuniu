@@ -1,6 +1,7 @@
 package cn.shenyun.wuniu.web;
 
 import cn.shenyun.utils.HostUtils;
+import cn.shenyun.wuniu.model.UserModel;
 import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,12 +33,14 @@ public class FileController {
     }
     @RequestMapping("session")
     @ResponseBody
-    public Map session(String userId,HttpServletRequest request,HttpServletResponse response){
+    public Map session(String userId,String userName,HttpServletRequest request,HttpServletResponse response){
         Map<String,Object> res=new HashMap<>();
         if(userId==null||userId.equals("")){
             res.put("msg","must set userId");
             return res;
         }
+        UserModel userModel=new UserModel(userId,userName);
+        request.getSession().setAttribute("user",userModel);
         request.getSession().setAttribute("userId",userId);
         res.put("msg","userId set ok");
         res.put("ip", HostUtils.getHostAddress());
@@ -50,11 +53,11 @@ public class FileController {
     public Map getsession(HttpServletRequest request,HttpServletResponse response){
         Map<String,Object> res=new HashMap<>();
         HttpSession httpSession=request.getSession();
-        String userId="";
-        if(httpSession.getAttribute("userId")!=null){
-            userId=httpSession.getAttribute("userId").toString();
+        UserModel userModel=null;
+        if(httpSession.getAttribute("user")!=null){
+            userModel=(UserModel)httpSession.getAttribute("user");
         }
-        res.put("msg","userId="+userId);
+        res.put("user",userModel);
         res.put("ip", HostUtils.getHostAddress());
         res.put("port", HostUtils.getPort());
         res.put("cookieList", getCookies(request));
