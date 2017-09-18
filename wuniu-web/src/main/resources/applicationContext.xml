@@ -37,7 +37,7 @@
     <context:component-scan base-package="cn.shenyun.wuniu.service"/>
 
 	<!--springmvc controller-->
-	<import resource="spring-servlet.xml"/>
+	<!--<import resource="spring-servlet.xml"/>-->
 
     <!--dubbo-->
     <!--<import resource="dubbo-conf.xml"/>-->

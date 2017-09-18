@@ -3,15 +3,15 @@
          xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
     <display-name>web-demo</display-name>
-    <!-- 指定Spring Bean的配置文件所在目录。默认配置在WEB-INF目录下 -->
-    <!--<context-param>-->
-    <!--<param-name>contextConfigLocation</param-name>-->
-    <!--<param-value>classpath*:applicationContext.xml</param-value>-->
-    <!--</context-param>-->
-    <!-- 加载Spring配置的方法入口 -->
-    <!--<listener>-->
-    <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
-    <!--</listener>-->
+     <!--指定Spring Bean的配置文件所在目录。默认配置在WEB-INF目录下 -->
+    <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath*:applicationContext.xml</param-value>
+    </context-param>
+     <!--加载Spring配置的方法入口 -->
+    <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
     <!-- 在Spring2.0中除了以前的Singleton和Prototype外又加入了三个新的web作用域，分别为request、session和global session，如果你想让你的容器里的某个bean拥有其中某种新的web作用域，除了在bean级上配置相应的scope属性，还必须在容器级做一个额外的初始化配置。 -->
     <listener>
         <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
@@ -83,7 +83,7 @@
         <!-- 可以自定义servlet.xml配置文件的位置和名称，默认为WEB-INF目录下，名称为[<servlet-name>]-servlet.xml，如spring-servlet.xml -->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:applicationContext.xml</param-value>
+            <param-value>classpath:spring-servlet.xml</param-value>
         </init-param>
 
         <load-on-startup>1</load-on-startup>

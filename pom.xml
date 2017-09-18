@@ -13,8 +13,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.deploy.skip>true</maven.deploy.skip>
         <!-- 统一设置spring的版本 -->
-        <!--<spring.version>3.1.2.RELEASE</spring.version>-->
-        <spring.version>4.2.4.RELEASE</spring.version>
+        <spring.version>3.1.2.RELEASE</spring.version>
+        <!--<spring.version>4.2.4.RELEASE</spring.version>-->
         <!--<spring.version>4.2.5.RELEASE</spring.version>-->
 
 

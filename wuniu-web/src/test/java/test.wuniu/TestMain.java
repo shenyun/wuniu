@@ -88,4 +88,12 @@ public class TestMain {
         System.out.println(lia);
 
     }
+    @Test
+    public void split(){
+        String aa="good";
+        String[] jsonPathArr=aa.split(",");
+        for (int i = 0; i <jsonPathArr.length ; i++) {
+            System.out.println(jsonPathArr[i]);
+        }
+    }
 }

@@ -9,6 +9,7 @@
     <bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration">
         <!--60*10 秒不操作session过期-->
         <property name="maxInactiveIntervalInSeconds" value="600"/>
+        <property name="redisNamespace" value="luma"/>
         <property name="defaultRedisSerializer">
             <bean class="org.springframework.data.redis.serializer.FastJsonRedisSerializer"></bean>
         </property>
